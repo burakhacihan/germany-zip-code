@@ -22,7 +22,7 @@ export default function Footer() {
 					<a
 						title="GitHub Repository"
 						target="_blank"
-						href="https://www.github.com"
+						href="https://github.com/burakhacihan/germany-zip-code"
 						rel="noreferrer"
 					>
 						<GithubOutlined /> Visit GitHub

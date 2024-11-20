@@ -21,11 +21,11 @@ export default function CookieConsent() {
 	return (
 		<div style={styles.container}>
 			<p style={styles.text}>
-				Bu web sitesi, size daha iyi bir deneyim sunabilmek için çerezler
-				kullanır. Devam ederek çerez politikamızı kabul etmiş olursunuz.
+				This website uses cookies to provide you with a better experience. By
+				continuing you are agreeing to our cookie policy.
 			</p>
 			<button style={styles.button} onClick={handleAccept}>
-				Kabul Et
+				Accept
 			</button>
 		</div>
 	);
