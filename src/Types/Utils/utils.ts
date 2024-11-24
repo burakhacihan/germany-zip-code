@@ -4,6 +4,7 @@ import React from "react";
 
 export function normalizeData(contextItem: DataContextType) {
 	const result: ZipCode[] = [];
+	const uniqueKeys: string[] = [];
 	let keyIndex = 0;
 
 	var data = contextItem.data ?? [];
@@ -11,15 +12,18 @@ export function normalizeData(contextItem: DataContextType) {
 	data.forEach((item) => {
 		item.districts.forEach((district) => {
 			district.streets.forEach((street) => {
-				result.push({
-					key: `${item.city}-${district.district}-${street.street}-${
-						street.zipCode
-					}-${keyIndex++}`,
-					city: item.city,
-					district: district.district,
-					street: street.street,
-					zipCode: street.zipCode,
-				});
+				const uniqueKey = `${item.city}-${district.district}-${street.street}-${street.zipCode}`;
+
+				if (!uniqueKeys.includes(uniqueKey)) {
+					uniqueKeys.push(uniqueKey);
+					result.push({
+						key: `${uniqueKey}-${keyIndex++}`,
+						city: item.city,
+						district: district.district,
+						street: street.street,
+						zipCode: street.zipCode,
+					});
+				}
 			});
 		});
 	});
