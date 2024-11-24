@@ -11,7 +11,7 @@ export default function Home() {
 					content="Find zip codes in Germany easily. Type a street name and copy the postal code right now."
 				/>
 			</Helmet>
-			<Table />;
+			<Table />
 		</>
 	);
 }
